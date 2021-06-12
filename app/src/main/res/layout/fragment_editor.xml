@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clEditorHolder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="8dp"
+    android:paddingTop="4dp"
+    android:paddingEnd="8dp">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toStartOf="@id/ivSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/ivHeaderPresets"
+        app:layout_constraintStart_toEndOf="@+id/ivBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivHeaderPresets"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_presets"
+        app:layout_constraintEnd_toStartOf="@+id/ivFrames"
+        app:layout_constraintStart_toEndOf="@+id/ivSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFrames"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_frames"
+        app:layout_constraintEnd_toStartOf="@+id/ivWallBrush"
+        app:layout_constraintStart_toEndOf="@+id/ivHeaderPresets"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivWallBrush"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_wall_brush"
+        app:layout_constraintEnd_toStartOf="@+id/ivFill"
+        app:layout_constraintStart_toEndOf="@+id/ivFrames"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFill"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_fill"
+        app:layout_constraintEnd_toStartOf="@+id/ivPicture"
+        app:layout_constraintStart_toEndOf="@+id/ivWallBrush"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPicture"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_picture"
+        app:layout_constraintEnd_toStartOf="@+id/ivCamera"
+        app:layout_constraintStart_toEndOf="@+id/ivFill"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivCamera"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivPicture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="@id/ivPicture"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ivPicture"
+        app:layout_constraintStart_toStartOf="@id/ivPicture"
+        app:layout_constraintTop_toTopOf="@id/ivPicture" />
+
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintBottom_toBottomOf="@id/ivCamera"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/ivCamera"
+        app:layout_constraintStart_toStartOf="@id/ivCamera"
+        app:layout_constraintTop_toTopOf="@id/ivCamera" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/mockIcons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ivSearch,ivHeaderPresets,ivFrames,ivWallBrush,ivFill,ivPicture,ivCamera" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/editorMockIcons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="ivDelete,ivShare" />
+
+    <com.muroming.postcardeditor.ui.views.mypictures.UserPicturesView
+        android:id="@+id/vUserPictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCamera" />
+
+    <ImageView
+        android:id="@+id/ivCurrentState"
+        android:layout_width="@dimen/medium_icon_size"
+        android:layout_height="@dimen/medium_icon_size"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_presets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vUserPictures" />
+
+    <TextView
+        android:id="@+id/tvCurrentState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/presets"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivCurrentState"
+        app:layout_constraintStart_toEndOf="@id/ivCurrentState"
+        app:layout_constraintTop_toTopOf="@id/ivCurrentState"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPresets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCurrentState" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvThemedPresets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCurrentState" />
+
+    <ProgressBar
+        android:id="@+id/pbLoadingPresets"
+        android:layout_width="@dimen/big_icon_size"
+        android:layout_height="@dimen/big_icon_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCurrentState" />
+
+    <TextView
+        android:id="@+id/tvLoadingError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/error_loading_presets"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/btnReloadPresets"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCurrentState"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btnReloadPresets"
+        android:layout_width="150dp"
+        android:layout_height="@dimen/medium_icon_size"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/dark_blue"
+        android:text="@string/reload"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvLoadingError"
+        app:layout_constraintStart_toStartOf="@id/tvLoadingError"
+        app:layout_constraintTop_toBottomOf="@id/tvLoadingError" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/errorGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvLoadingError,btnReloadPresets" />
+
+    <com.muroming.postcardeditor.ui.views.editorview.PhotoEditorView
+        android:id="@+id/vPhotoEditor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCurrentState" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

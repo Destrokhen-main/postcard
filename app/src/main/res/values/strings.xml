@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Красивые сообщения</string>
+    <string name="my_pictures">Мои работы</string>
+    <string name="all_pictures">Все</string>
+    <string name="presets">Шаблоны</string>
+    <string name="frames">Фоторамки</string>
+    <string name="fills">Заливки</string>
+    <string name="send_to">Отправить фото</string>
+    <string name="error_loading_presets">Не удалось загрузить шаблоны, попробуйте ещё раз</string>
+    <string name="reload">Перезагрузить</string>
+
+    <string name="editor_closing_warning">Все изменения будут утеряны, хотите сохранить?</string>
+    <string name="save_picture">Сохранить</string>
+    <string name="dont_save_picture">Не сохранять</string>
+    <string name="dismiss_dialog">Закрыть</string>
+
+    <string name="letters_spacing">Межбуквенный интервал</string>
+    <string name="text_height">Высота строки</string>
+</resources>

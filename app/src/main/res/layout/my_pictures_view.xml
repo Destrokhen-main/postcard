@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.RelativeLayout">
+
+    <TextView
+        android:id="@+id/tvMyPictures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rvUserPictures"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/my_pictures"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAllPictures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivAllPictures"
+        android:layout_alignBottom="@id/ivAllPictures"
+        android:layout_marginEnd="2dp"
+        android:layout_toStartOf="@id/ivAllPictures"
+        android:gravity="center"
+        android:text="@string/all_pictures"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/ivAllPictures"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_open_file" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUserPictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivAllPictures"
+        android:layout_marginTop="12dp" />
+</merge>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/vInputTextBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#77000000"
+        app:layout_constraintBottom_toBottomOf="@id/photoEditorView"
+        app:layout_constraintTop_toTopOf="@id/photoEditorView" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etTextInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:minWidth="200dp"
+        android:textSize="@dimen/default_text_size"
+        android:inputType="textMultiLine"
+
+
+
+        android:textAppearance="@style/TextEdit"
+
+        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintBottom_toTopOf="@id/tvTextHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:maxLength="600"
+        android:maxLines="25"
+        app:layout_constraintTop_toTopOf="@id/vInputTextBackground"
+        tools:text="Demo text" />
+
+    <ImageView
+        android:id="@+id/ivTextToLeft"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_text_to_left"
+        app:layout_constraintBottom_toBottomOf="@id/vInputTextBackground"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTextToCenter"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_text_to_center"
+        app:layout_constraintBottom_toBottomOf="@id/vInputTextBackground"
+        app:layout_constraintStart_toEndOf="@id/ivTextToLeft" />
+
+    <ImageView
+        android:id="@+id/ivTextToRight"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_text_to_right"
+        app:layout_constraintBottom_toBottomOf="@id/vInputTextBackground"
+        app:layout_constraintStart_toEndOf="@id/ivTextToCenter" />
+
+    <ImageView
+        android:id="@+id/ivBoldText"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_bold_text"
+        app:layout_constraintBottom_toTopOf="@id/ivTextToLeft"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivItalicText"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_italic_text"
+        app:layout_constraintBottom_toTopOf="@id/ivTextToLeft"
+        app:layout_constraintStart_toEndOf="@id/ivBoldText" />
+
+    <ImageView
+        android:id="@+id/ivOutlineText"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_underline_text"
+        app:layout_constraintBottom_toTopOf="@id/ivTextToLeft"
+        app:layout_constraintStart_toEndOf="@id/ivItalicText" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/intervalsGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:constraint_referenced_ids="tvTextHeight,vTextHeightSlider,tvSpacing,vSpacingSlider,tvShadowScale,vShadowScaleSlider" />
+
+    <TextView
+        android:id="@+id/tvShadowScale"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sliders_height"
+        android:layout_marginStart="4dp"
+        android:background="@color/dark_blue"
+        android:gravity="center_vertical"
+        android:text="Толщина обводки"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@id/tvTextHeight"
+        app:layout_constraintEnd_toStartOf="@id/vTextHeightSlider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/vShadowScaleSlider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sliders_height"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/dark_blue"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/vTextHeightSlider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivTextToRight" />
+
+    <TextView
+        android:id="@+id/tvTextHeight"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sliders_height"
+        android:layout_marginStart="4dp"
+        android:background="@color/dark_blue"
+        android:gravity="center_vertical"
+        android:text="@string/text_height"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@id/tvSpacing"
+        app:layout_constraintEnd_toStartOf="@id/vSpacingSlider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/vTextHeightSlider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sliders_height"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/dark_blue"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/vSpacingSlider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivTextToRight" />
+
+    <TextView
+        android:id="@+id/tvSpacing"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sliders_height"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/dark_blue"
+        android:gravity="center_vertical"
+        android:text="@string/letters_spacing"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@id/ivOutlineText"
+        app:layout_constraintEnd_toStartOf="@id/vSpacingSlider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <SeekBar
+        android:id="@+id/vSpacingSlider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sliders_height"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/dark_blue"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/ivOutlineText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivTextToRight" />
+
+    <SeekBar
+        android:id="@+id/vTextSizeSlider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/dark_blue"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ivTextToRight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivTextToRight"
+        app:layout_constraintTop_toTopOf="@id/ivTextToRight" />
+
+    <Spinner
+        android:id="@+id/vTypefacesSpinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintBottom_toBottomOf="@id/ivOutlineText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivOutlineText"
+        app:layout_constraintTop_toTopOf="@id/ivOutlineText" />
+
+</merge>

@@ -1,0 +1,6 @@
+package com.muroming.postcardeditor.utils
+
+import androidx.core.content.FileProvider
+
+
+class GenericFileProvider : FileProvider()
